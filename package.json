@@ -1,0 +1,35 @@
+{
+  "name": "react-native-lumberjack",
+  "description": "Native CocoaLumberjack Logging Framework for iOS",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-native start"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
+    "metro-react-native-babel-preset": "^0.49.0",
+    "react": "16.6.0",
+    "react-native": "^0.57.4",
+    "react-test-renderer": "^16.6.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "version": "1.0.0",
+  "keywords": [
+    "react-native",
+    "react-component",
+    "ios",
+    "hybrid"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/houserater/react-native-lumberjack.git"
+  },
+  "license": "MIT",
+  "author": "Hank Brekke (https://github.com/hnryjms)"
+}
