@@ -10,11 +10,51 @@
 
 import React from "react";
 import { NativeModules } from "react-native";
+import { format } from "util";
 
-const RNLumberjack = NativeModules.RNLumberjack;
+const RNLumberjack = NativeModules.RNLumberjackManager;
 
-class LoggingBuilder {
+function stackToString (e) {
+    let s = e.stack, ce;
 
+    if (typeof e.cause === 'function' && (ce = e.cause()))
+        s += '\nCaused by: ' + stackToString(ce);
+
+    return s
 }
 
-export default LoggingBuilder;
+function LoggingBuilder(loggerName) {
+    return [
+        "verbose",
+        "debug",
+        "info",
+        "warn",
+        "error"
+    ].reduce((logger, logName) => {
+        logger[logName] = (...args) => {
+            args = args.map((arg) => {
+                if (arg instanceof Error) {
+                    const errorBody = {
+                        message: arg.message,
+                        code: arg.code,
+                        stack: stackToString(arg)
+                    };
+                    return `Error(${arg.name})${JSON.stringify(errorBody)}`
+                }
+                return arg;
+            });
+            const message = format(...args);
+            RNLumberjack[logName](message, loggerName);
+        };
+        return logger;
+    }, {})
+}
+
+LoggingBuilder.addFileLogger = ({
+    maxSize = 1024 * 1024, // in bytes
+    rollingFrequency = 0 // in seconds
+} = {}) => {
+    RNLumberjack.addFileLogger(maxSize, rollingFrequency);
+};
+
+module.exports = LoggingBuilder;

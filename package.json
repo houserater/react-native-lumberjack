@@ -5,7 +5,9 @@
   "scripts": {
     "start": "react-native start"
   },
-  "dependencies": {},
+  "dependencies": {
+    "util": "^0.11.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
     "babel-jest": "^23.6.0",

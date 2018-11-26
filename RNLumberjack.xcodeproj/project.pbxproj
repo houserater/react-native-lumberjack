@@ -236,6 +236,10 @@
 		FA17C0F01F151163003E86B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../ios/Carthage/Build/iOS",
+					"$(SRCROOT)/examples/ios/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -246,6 +250,10 @@
 		FA17C0F11F151163003E86B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../ios/Carthage/Build/iOS",
+					"$(SRCROOT)/examples/ios/Carthage/Build/iOS",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
