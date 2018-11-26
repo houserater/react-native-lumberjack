@@ -15,24 +15,8 @@ static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 
 RCT_EXPORT_MODULE()
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [DDLog addLogger:[DDTTYLogger sharedInstance]];
-        [DDLog addLogger:[DDASLLogger sharedInstance]];
-    }
-    return self;
-}
-
 + (BOOL)requiresMainQueueSetup {
     return NO;
-}
-
-RCT_EXPORT_METHOD(addFileLogger:(NSUInteger)maxSize withFrequency:(NSUInteger)frequency) {
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.maximumFileSize = maxSize;
-    fileLogger.rollingFrequency = frequency;
-    [DDLog addLogger:fileLogger];
 }
 
 RCT_EXPORT_METHOD(verbose:(NSString *)message fromModule:(NSString *)module) {

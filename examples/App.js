@@ -20,8 +20,15 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+    constructor(props) {
+        super(props);
+
+        const err = new Error("Example Error Message");
+        Log.info(err, "Application mock-Error");
+    }
+
     render() {
-        Log.verbose(new Error("hi world"));
+        Log.info("Application rendered `App`");
 
         return (
             <View style={styles.container}>

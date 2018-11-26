@@ -14,6 +14,10 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [DDLog addLogger:[DDOSLogger sharedInstance]];
+    
+    DDLogInfo(@"Application Launched");
+    
     NSURL *jsCodeLocation;
     
     jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"examples/index" fallbackResource:nil];

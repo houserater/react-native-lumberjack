@@ -238,9 +238,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../../ios/Carthage/Build/iOS",
-					"$(SRCROOT)/examples/ios/Carthage/Build/iOS",
+					"$(SRCROOT)/../../../ios/Carthage/Build/iOS",
+					"$(SRCROOT)/../examples/ios/Carthage/Build/iOS",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -252,9 +252,9 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../../ios/Carthage/Build/iOS",
-					"$(SRCROOT)/examples/ios/Carthage/Build/iOS",
+					"$(SRCROOT)/../../../ios/Carthage/Build/iOS",
+					"$(SRCROOT)/../examples/ios/Carthage/Build/iOS",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

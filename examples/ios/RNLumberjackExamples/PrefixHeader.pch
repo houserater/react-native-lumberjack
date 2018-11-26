@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  RNLumberjackExamples
+//
+//  Created by Hank Brekke on 11/28/18.
+//  Copyright © 2018 HouseRater. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define LOG_LEVEL_DEF ddLogLevel
+#import <CocoaLumberjack/CocoaLumberjack.h>
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
+
+#endif /* PrefixHeader_pch */

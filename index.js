@@ -50,11 +50,4 @@ function LoggingBuilder(loggerName) {
     }, {})
 }
 
-LoggingBuilder.addFileLogger = ({
-    maxSize = 1024 * 1024, // in bytes
-    rollingFrequency = 0 // in seconds
-} = {}) => {
-    RNLumberjack.addFileLogger(maxSize, rollingFrequency);
-};
-
 module.exports = LoggingBuilder;
